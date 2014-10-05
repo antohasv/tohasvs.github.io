@@ -5,7 +5,7 @@ function validateEmail(email) {
 
 $(document).ready(function(){
 	$("#pointer").click(function (){	
-		ga('send', 'event', 'btn_arrow', 'click');
+		yaCounterCOUNTER_ID.reachGoal('btn_arrow_click');
 	   	$('html, body').animate({
 	    	scrollTop: $("#page2").offset().top
 	     	}, 1000);
@@ -15,12 +15,11 @@ $(document).ready(function(){
       	var email = $("#email").val();
        	if (!validateEmail(email)) {
        	    $("#email").css("color", "red");
-           	ga('send', 'event', 'btn_send', 'click', 'failure email');
+           	yaCounterCOUNTER_ID.reachGoal('email_failure');
        	} else {
        	    $("#email").val("");
        	    alert("Ваш e-mail учтен.");
-           	ga('send', 'event', 'btn_send', 'click', 'success email');
-           	ga('send', 'event', 'db_email', email);
+           	yaCounterCOUNTER_ID.reachGoal('email_success');
        	}
    	});
 
@@ -28,12 +27,9 @@ $(document).ready(function(){
         $("#email").css("color", "black");
     });
 
- 	$( "#email" ).focus(function() {
-		ga('send', 'event', 'input', 'focus', 'begin to write');
-	});
 	
 	$("#btn_try").click(function() {
-		ga('send', 'event', 'btn_try', 'click');
+		yaCounterCOUNTER_ID.reachGoal('btn_try_click');
 
 		$("#btn_try").css("display", "none");
 		$("#page3").css("display", "block");
