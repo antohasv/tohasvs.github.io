@@ -5,7 +5,7 @@ function validateEmail(email) {
 
 $(document).ready(function(){
 	$("#pointer").click(function (){	
-		yaCounterCOUNTER_ID.reachGoal('btn_arrow_click');
+		w.yaCounter26499924.reachGoal('btn_arrow_click');
 	   	$('html, body').animate({
 	    	scrollTop: $("#page2").offset().top
 	     	}, 1000);
@@ -15,11 +15,11 @@ $(document).ready(function(){
       	var email = $("#email").val();
        	if (!validateEmail(email)) {
        	    $("#email").css("color", "red");
-           	yaCounterCOUNTER_ID.reachGoal('email_failure');
+           	w.yaCounter26499924.reachGoal('email_failure');
        	} else {
        	    $("#email").val("");
        	    alert("Ваш e-mail учтен.");
-           	yaCounterCOUNTER_ID.reachGoal('email_success');
+           	w.yaCounter26499924.reachGoal('email_success', {userEmail: email});
        	}
    	});
 
@@ -29,7 +29,7 @@ $(document).ready(function(){
 
 	
 	$("#btn_try").click(function() {
-		yaCounterCOUNTER_ID.reachGoal('btn_try_click');
+		w.yaCounter26499924.reachGoal('btn_try_click');
 
 		$("#btn_try").css("display", "none");
 		$("#page3").css("display", "block");
