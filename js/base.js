@@ -5,7 +5,7 @@ function validateEmail(email) {
 
 $(document).ready(function(){
 	$("#pointer").click(function (){	
-		ga('send', 'event', 'button', 'click', 'arrow');
+		ga('send', 'event', 'btn_arrow', 'click');
 	   	$('html, body').animate({
 	    	scrollTop: $("#page2").offset().top
 	     	}, 1000);
@@ -20,6 +20,7 @@ $(document).ready(function(){
        	    $("#email").val("");
        	    alert("Ваш e-mail учтен.");
            	ga('send', 'event', 'btn_send', 'click', 'success email');
+           	ga('send', 'event', 'db_email', email);
        	}
    	});
 
