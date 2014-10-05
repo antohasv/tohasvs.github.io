@@ -15,11 +15,11 @@ $(document).ready(function(){
       	var email = $("#email").val();
        	if (!validateEmail(email)) {
        	    $("#email").css("color", "red");
-           	ga('send', 'event', 'btn_send', 'click', 'failure email:' + email);
+           	ga('send', 'event', 'btn_send', 'click', 'failure email');
        	} else {
        	    $("#email").val("");
        	    alert("Ваш e-mail учтен.");
-           	ga('send', 'event', 'btn_send', 'click', 'success email:' + email);
+           	ga('send', 'event', 'btn_send', 'click', 'success email');
        	}
    	});
 
