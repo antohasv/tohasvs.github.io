@@ -27,10 +27,6 @@ $(document).ready(function(){
     $( "#email" ).keyup(function(){
         $("#email").css("color", "black");
     });
-
- 	$( "#email" ).focus(function() {
-		ga('send', 'event', 'input', 'focus', 'begin to write');
-	});
 	
 	$("#btn_try").click(function() {
 		ga('send', 'event', 'btn_try', 'click');
