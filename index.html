@@ -3,21 +3,8 @@
 <head>
 	<meta charset="utf-8">
     <title>Symptomer</title>
+    <link rel="stylesheet" href="css/roboto_font.css">
     <style type="text/css">
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 700;
-            src: url('font/Roboto-Bold.ttf');
-        }
-
-        @font-face {
-            font-family: 'RobotoLight';
-            font-style: normal;
-            font-weight: 700;
-            src: url('font/Roboto-Light.ttf');
-        }
-
         .title_problem {
             font-size:25px;
             color:#1f4d5f;
@@ -38,7 +25,7 @@
         }
 
         .content2 {
-            padding-top: 125px;
+            padding-top: 90px;
             padding-bottom:120px;
         }
 
@@ -59,11 +46,10 @@
         }
 
         .circle {
-            background: #f00;
-            overflow:hidden;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
+            width:100px;
+            height:100px;
+            background-image: url(img/circle.png);
+            background-repeat: no-repeat;
         }
 
         .item_text {
@@ -85,75 +71,139 @@
             color:#1f4d5f;
         }
 
-        #page1 {
-            background-color:white;
-        }
-
         #page2 {
             background-color:#f2f2f2;
         }
 
+		#page3 {
+			display: none;
+		}
+		
         #page4 {
             background-color:#f2f2f2;
+        }
+
+        .btn {
+            	border: none;
+                box-shadow: 0 6px #ab3c3c;
+                font-family: inherit;
+                font-size: inherit;
+                color: #fff;
+                background: #e74c3c;
+
+                cursor: pointer;
+                display: inline-block;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: 700;
+                outline: none;
+                position: relative;
+        }
+
+        .btn-send {
+            border-radius: 5px;
+            padding-left:20px;
+            padding-right:20px;
+        }
+
+        .btn-red {
+                border-radius: 20px;
+                padding: 25px 80px;
+                margin: 15px 30px;
+                -webkit-transition: none;
+                -moz-transition: none;
+                transition: none;
+        }
+
+        .btn:hover {
+            box-shadow: 0 4px #ab3c3c;
+            top: 2px;
+        }
+
+        .btn:active {
+            box-shadow: 0 0 #ab3c3c;
+            top: 6px;
         }
     </style>
 </head>
 <body>
     <div id="page1" class="content1">
         <div class="header">
-            <img src="img/robot.jpg" width="400px"/>
-            <div style="float:right;">
+            <div style="display:inline-block;">
+                <img src="img/robot.jpg" width="500px"/>
+            </div>
+
+            <div style="display:inline-block;margin-left:100px">
                 <div><span style="color:#1f4d5f;font-size:40px">SYMPTO</span><span style="color:#e74c3c;font-size:40px">MER</span></div>
+
                 <div class="title_problem">
                     <div>Надоели поликлиники?</div>
                     <div style="margin-top:20px">Устали стоять в очередях?</div>
                     <div style="margin-top:20px">Есть решение!</div>
                 </div>
+
                 <div style="text-align:center; margin-top:80px">
-                    <img src="img/pointer.png" width="50px" id="pointer">
+                    <img src="img/arrow_anim.gif" width="50px" style="cursor: pointer" id="pointer">
                 </div>
             </div>
+
         </div>
     </div>
     <div id="page2" class="content2">
         <div class="header">
+
             <div style="display:table">
-                <div class="circle" style="display:table-cell">
-                    <img src="img/doc.png" width="40px" style="margin-left:30px;margin-top:20px"/>
+                <div style="display:table-cell;">
+                    <div class="circle">
+                        <img src="img/doc.png" width="40px" style="margin-left:30px;margin-top:20px"/>
+                    </div>
                 </div>
-                <div class="item_text" style="display:table-cell;margin-left:30px">
-                    Позволяет провести первоначальную диагностику вашего здоровья
-                    <div class="item_text_desc">
-                        По набору симптомов сервис позволяет определить состояние здоровья
+                <div style="display:table-cell;">
+                    <div class="item_text" style="margin-left:30px">
+                        Позволяет провести первоначальную диагностику вашего здоровья
+                        <div class="item_text_desc">
+                            По набору симптомов сервис позволяет определить состояние здоровья
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div style="display:table;margin-top:100px">
-                <div class="circle" style="display:table-cell">
-                    <img src="img/pill.png" width="50px" style="margin-left:25px;margin-top:30px"/>
+                <div style="display:table-cell;">
+                    <div class="circle">
+                        <img src="img/pill.png" width="50px" style="margin-left:25px;margin-top:30px"/>
+                    </div>
                 </div>
-                <div class="item_text" style="display:table-cell;margin-left:30px">
-                    Получить рекомендации о болезни
-                    <div class="item_text_desc">
-                        По набору симптомов сервис позволяет определить состояние здоровья
+                <div style="display:table-cell;">
+                    <div class="item_text" style="margin-left:30px">
+                        Получить рекомендации о болезни
+                        <div class="item_text_desc">
+                            Обширная база заболеваний позволяет получить детальное представление о вашем здоровье
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div style="display:table;margin-top:100px">
-                <div class="circle" style="display:table-cell">
-                    <img src="img/hosp.png" width="65px" style="margin-left:18px;margin-top:25px"/>
+                <div style="display:table-cell;">
+                    <div class="circle">
+                        <img src="img/hosp.png" width="65px" style="margin-left:18px;margin-top:25px"/>
+                    </div>
                 </div>
-                <div class="item_text" style="display:table-cell;margin-left:30px">
-                    Позволяет проконсультироваться с ведущими специалистами и записаться на прием
-                    <div class="item_text_desc">
-                        По набору симптомов сервис позволяет определить состояние здоровья
+                <div style="display:table-cell;">
+                    <div class="item_text" style="margin-left:30px">
+                        Позволяет проконсультироваться с ведущими специалистами или записаться на прием
+                        <div class="item_text_desc">
+                            Онлайн специалистам или направить в ближайшую поликлиникуна на прием к врачу.
+                        </div>
                     </div>
                 </div>
             </div>
 
-
+		<div style="text-align:center">
+		 	<button class="btn btn-red" style="height:64px;margin-top:70px" id="btn_try">Попробовать</button>
+		 </div>
+		 
         </div>
     </div>
     <div id="page3" class="content">
@@ -162,8 +212,8 @@
                     Сервис находится в разработке. Вам выпала возможность принять участие в развитии проекта, оставьте свой e-mail.
             </div>
             <div style="margin-top:50px;text-align:center">
-                <input type="text" placeholder="Введите E-mail" id="email" style="width:300px;height:28px"/>
-                <button style="height:32px;margin-left:25px;" id="btn_send">Отправить</button>
+                <input type="text" placeholder="Введите E-mail" id="email" style="width:300px;height:32px;padding-left:10px;padding-right:10px;"/>
+                <button class="btn btn-send" style="height:32px;margin-left:25px;" id="btn_send">Отправить</button>
             </div>
         </div>
     </div>
@@ -176,41 +226,14 @@
 	<script  type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script',"http://www.google-analytics.com/analytics.js",'ga');
 
-	  ga('create', 'UA-55409967-1', 'auto');
-	  ga('send', 'pageview');
+		  ga('create', 'UA-55409967-1', 'none');
+		  ga('send', 'pageview');
 
 	</script>
-    <script type="text/javascript">
-	    function validateEmail(email) { 
-		    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		    return re.test(email);
-		} 
-    	$(document).ready(function(){
-		   $("#pointer").click(function (){
-		   		ga('send', 'click', 'button', 'pointer');
-              	$('html, body').animate({
-                  	scrollTop: $("#page2").offset().top
-               	}, 1000);
-            });
-            
-            $("#btn_send").click(function(){
-            	var email = $("#email").val();
-            	if (!validateEmail(email)) {
-            		alert("E-mail введен неправильно");
-            		ga('send', 'error', 'email', email);
-            	} else {
-            		ga('send', 'ok', 'emai', email);
-            		alert("Ваш e-mail учтен.");
-            	}
-            });
-            
-            $( "#email" ).focus(function() {
-			  	ga('send', 'focus', 'edittext', 'send');
-			});
-		});
+    <script type="text/javascript" src="js/base.js">
     </script>
 </html>
