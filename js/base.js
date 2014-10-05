@@ -5,7 +5,7 @@ function validateEmail(email) {
 
 $(document).ready(function(){
 	$("#pointer").click(function (){	
-		ga('send', 'click', 'button', 'pointer');
+		ga('send', 'event', 'button', 'click', 'arrow');
 	   	$('html, body').animate({
 	    	scrollTop: $("#page2").offset().top
 	     	}, 1000);
@@ -15,11 +15,11 @@ $(document).ready(function(){
       	var email = $("#email").val();
        	if (!validateEmail(email)) {
        	    $("#email").css("color", "red");
-           	ga('send', 'error', 'email', email);
+           	ga('send', 'event', 'btn_send', 'click', 'failure email:' + email);
        	} else {
        	    $("#email").val("");
        	    alert("Ваш e-mail учтен.");
-           	ga('send', 'ok', "email", email);
+           	ga('send', 'event', 'btn_send', 'click', 'success email:' + email);
        	}
    	});
 
@@ -28,11 +28,12 @@ $(document).ready(function(){
     });
 
  	$( "#email" ).focus(function() {
-		ga('send', 'focus', 'edittext', 'send');
+		ga('send', 'event', 'input', 'focus', 'begin to write');
 	});
 	
 	$("#btn_try").click(function() {
-		ga('send', 'pageview', 'button', 'try');
+		ga('send', 'event', 'btn_try', 'click');
+
 		$("#btn_try").css("display", "none");
 		$("#page3").css("display", "block");
 		$('html, body').animate({
