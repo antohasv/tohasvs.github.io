@@ -5,6 +5,20 @@
     <title>Symptomer</title>
     <link rel="stylesheet" href="css/roboto_font.css">
     <style type="text/css">
+    
+    	.pointer_container {
+
+    		position: relative;
+    	}
+    	.pointer_container:hover {
+        	animation: updownAnimation 3s;	
+    	}
+    	
+    	@keyframes updownAnimation {
+    		0% {top: 0px;}
+    		50% {top: 50px;}
+    		100% {top: 0px;}
+    	}
         .title_problem {
             font-size:25px;
             color:#1f4d5f;
@@ -142,8 +156,8 @@
                     <div style="margin-top:20px">Есть решение!</div>
                 </div>
 
-                <div style="text-align:center; margin-top:80px">
-                    <img src="img/arrow_anim.gif" width="50px" style="cursor: pointer" id="pointer">
+                <div style="text-align:center; margin-top:80px" class="pointer_container">
+                    <img src="img/a1.png" width="50px" style="cursor: pointer" id="pointer">
                 </div>
             </div>
 
