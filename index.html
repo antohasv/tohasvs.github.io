@@ -10,11 +10,22 @@
 
     		position: relative;
     	}
+    	
     	.pointer_container:hover {
-        	animation: updownAnimation 3s;	
+    		animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+        	-webkit-animation: updownAnimation 3s;
+        	-moz-animation: updownAnimation 3s;
     	}
     	
-    	@keyframes updownAnimation {
+    	@-webkit-keyframes updownAnimation {
+    		0% {top: 0px;}
+    		50% {top: 50px;}
+    		100% {top: 0px;}
+    	}
+    	
+    	@-moz-keyframes updownAnimation {
     		0% {top: 0px;}
     		50% {top: 50px;}
     		100% {top: 0px;}
@@ -25,7 +36,7 @@
             margin-top:120px;
             text-align:center;
         }
-
+        
         body {
             font-family: 'Roboto', sans-serif;
             font-weight:bold;
