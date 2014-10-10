@@ -37,4 +37,11 @@ $(document).ready(function(){
 	          	scrollTop: $("#page3").offset().top
 	       	}, 1000);
 	});
+	$(".pointer_container").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
+		 $(this).removeClass("animated")  
+	});
+
+	$(".pointer_container").hover(function(){
+  		$(this).addClass("animated");        
+	});
 });
