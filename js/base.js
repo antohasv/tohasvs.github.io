@@ -3,7 +3,7 @@ function validateEmail(email) {
 	return re.test(email);
 }
 
-var analytic = new GoogleAnalytic();
+var analytic = new YandexAnalytic();//GoogleAnalytic();
 
 $(document).ready(function(){
 	var hasScrollPage2 = false;
