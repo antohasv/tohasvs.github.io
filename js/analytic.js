@@ -11,8 +11,8 @@ function Analytic() {}
 Analytic.prototype.scrollToPage2 = function() {};
 Analytic.prototype.clickToBtnArrow = function() {};
 Analytic.prototype.clickToBtnTry = function() {};
-Analytic.prototype.clickToBtnSendSuccessEmail = function() {};
-Analytic.prototype.clickToBtnSendFailureEmail = function() {};		
+Analytic.prototype.clickToBtnSendSuccessEmail = function(email) {};
+Analytic.prototype.clickToBtnSendFailureEmail = function(email) {};		
 
 function GoogleAnalytic() {
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -36,12 +36,12 @@ GoogleAnalytic.prototype.clickToBtnArrow = function() {
 		ga('send', 'event', 'btn_arrow', 'click');
 };
 
-GoogleAnalytic.prototype.clickToBtnSendSuccessEmail = function() {
+GoogleAnalytic.prototype.clickToBtnSendSuccessEmail = function(email) {
    	ga('send', 'event', 'btn_send', 'click', 'success email');
     ga('send', 'event', 'db_email', email);
 };
 
-GoogleAnalytic.prototype.clickToBtnSendFailureEmail = function() {
+GoogleAnalytic.prototype.clickToBtnSendFailureEmail = function(email) {
    	ga('send', 'event', 'btn_send', 'click', 'failure email');
 };	
 
@@ -79,9 +79,9 @@ YandexAnalytic.prototype.clickToBtnArrow = function() {
 YandexAnalytic.prototype.clickToBtnTry = function() {
 	window.yaCounter26499924.reachGoal('btn_try_click');
 };
-YandexAnalytic.prototype.clickToBtnSendSuccessEmail = function() {
+YandexAnalytic.prototype.clickToBtnSendSuccessEmail = function(email) {
 	window.yaCounter26499924.reachGoal('email_success', {userEmail: email});
 };
-YandexAnalytic.prototype.clickToBtnSendFailureEmail = function() {
+YandexAnalytic.prototype.clickToBtnSendFailureEmail = function(email) {
 	window.yaCounter26499924.reachGoal('email_failure');
 };	

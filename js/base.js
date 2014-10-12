@@ -26,11 +26,11 @@ $(document).ready(function(){
       	var email = $("#email").val();
        	if (!validateEmail(email)) {
        	    $("#email").css("color", "red");
-       	    analytic.clickToBtnSendFailureEmail();
+       	    analytic.clickToBtnSendFailureEmail(email);
        	} else {
        	    $("#email").val("");
        	    alert("Ваш e-mail учтен.");
-       	    analytic.clickToBtnSendSuccessEmail();
+       	    analytic.clickToBtnSendSuccessEmail(email);
        	}
    	});
 
