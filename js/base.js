@@ -3,24 +3,34 @@ function validateEmail(email) {
 	return re.test(email);
 }
 
+var analytic = new GoogleAnalytic();
+
 $(document).ready(function(){
+	var hasScrollPage2 = false;
+
 	$("#pointer").click(function (){	
-		ga('send', 'event', 'btn_arrow', 'click');
+		analytic.clickToBtnArrow();
 	   	$('html, body').animate({
 	    	scrollTop: $("#page2").offset().top
 	     	}, 1000);
   	});
 
-	$("#btn_send").click(function(){
+  	$(window).scroll(function() {
+  		if (!hasScrollPage2 && ($(this).scrollTop() >= $("#page2").offset().top)) {
+  			hasScrollPage2 = true;
+  			analytic.scrollToPage2();
+  		}
+  	});
+
+	$("#btn_send").click(function() {
       	var email = $("#email").val();
        	if (!validateEmail(email)) {
        	    $("#email").css("color", "red");
-           	ga('send', 'event', 'btn_send', 'click', 'failure email');
+       	    analytic.clickToBtnSendFailureEmail();
        	} else {
        	    $("#email").val("");
        	    alert("Ваш e-mail учтен.");
-           	ga('send', 'event', 'btn_send', 'click', 'success email');
-           	ga('send', 'event', 'db_email', email);
+       	    analytic.clickToBtnSendSuccessEmail();
        	}
    	});
 
@@ -29,7 +39,7 @@ $(document).ready(function(){
     });
 	
 	$("#btn_try").click(function() {
-		ga('send', 'event', 'btn_try', 'click');
+		analytic.clickToBtnTry();
 
 		$("#btn_try").css("display", "none");
 		$("#page3").css("display", "block");
@@ -37,6 +47,7 @@ $(document).ready(function(){
 	          	scrollTop: $("#page3").offset().top
 	       	}, 1000);
 	});
+
 	$(".pointer_container").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
 		 $(this).removeClass("animated")  
 	});
